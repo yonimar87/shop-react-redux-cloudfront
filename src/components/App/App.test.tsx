@@ -51,3 +51,13 @@ test("Renders products list", async () => {
     expect(screen.getByText(formatAsPrice(product.price))).toBeInTheDocument();
   });
 });
+
+test("Renders HelloWorld component", () => {
+  renderWithProviders(
+    <MemoryRouter initialEntries={["/hello"]}>
+      <App />
+    </MemoryRouter>
+  );
+
+  expect(screen.getByText("Hello, World!")).toBeInTheDocument();
+});
